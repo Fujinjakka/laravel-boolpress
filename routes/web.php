@@ -14,5 +14,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+  return view('welcome');
 });
+
+Route::resource("posts","PostController");
+Route::get("/blog/{slug}","BlogController@show");
+Route::post("/blog/{id}/comment","BlogController@addComment")->name('add-comment');
+
+// Route::fallback(function(){
+//   return '<img src="inserisci il link dell img" alt="">'
+// });
