@@ -17,7 +17,7 @@
     <section id="comments" class="my-4">
       <h2>Commenti</h2>
       @foreach ($post->comments as $comment)
-        <div>
+        <div class="shadow p-3 mb-5 bg-white rounded">
           <small>{{$comment->author}} - {{$comment->created_at}}</small>
           <p>{{$comment->text}}</p>
         </div>

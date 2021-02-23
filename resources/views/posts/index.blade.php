@@ -9,7 +9,7 @@
   @if(session('message'))
     <div class="alert alert-success">{{session("message")}}</div>  
   @endif
-  <table class="table table-dark table-striped table-bordered">
+  <table class="table table-striped table-bordered">
     <thead>
       <tr>
         <th>ID: </th>
@@ -35,16 +35,16 @@
           <td>{{$post->subtitle}}</td>
           <td>{{substr($post->text, 0, 20)}}</td>
           <td>{{$post->author}}</td>
-          <td><img style="height: 150px" src="{{$post->img_path}}" alt="{{$post->title}}"> </td>
+          <td><img style="width: 150px" src="{{$post->img_path}}" alt="{{$post->title}}"> </td>
           <td>{{$post->created_at}}</td>
           <td>{{$post->updated_at}}</td>
-          <td><a href="{{route("posts.show", ["post" => $post->id])}}" class="btn btn-outline-light"><i class="fas fa-eye"></i></a></td>
-          <td><a href="{{route("posts.edit", ["post" => $post->id])}}" class="btn btn-outline-light"><i class="fas fa-edit"></i></a></td>
+          <td><a href="{{route("posts.show", ["post" => $post->id])}}" class="btn btn-secondary"><i class="fas fa-eye"></i></a></td>
+          <td><a href="{{route("posts.edit", ["post" => $post->id])}}" class="btn btn-secondary"><i class="fas fa-edit"></i></a></td>
           <td>
             <form action="{{route("posts.destroy", $post->id)}}" method="POST">
               @csrf
               @method("DELETE")
-              <button type="submit" class="btn btn-outline-light"><i class="fas fa-trash"></i></button>
+              <button type="submit" class="btn btn-danger"><i class="fas fa-trash"></i></button>
             </form>
           </td>
         </tr>

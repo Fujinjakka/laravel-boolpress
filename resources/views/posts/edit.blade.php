@@ -61,10 +61,18 @@
         <option value="private" {{($post->infoPost->comment_status) == 'private' ? 'selected' : ''}}>Private</option>
       </select>
     </div>
+    <h3 class="my-4">TAGS</h3>
     @foreach ($tags as $tag)
       <div class="custom-control custom-checkbox">
-        <input type="checkbox" class="custom-control-input" id="{{$tag->id}}" name="tags[]" value="{{$tag->id}}" {{($post->tags->contains($tag->id)) ? 'checked' : ''}}>
-        <label class="custom-control-label" for="{{$tag->id}}">{{$tag->name}}</label>
+        <input type="checkbox" class="custom-control-input" id="tag-{{$tag->id}}" name="tags[]" value="{{$tag->id}}" {{($post->tags->contains($tag->id)) ? 'checked' : ''}}>
+        <label class="custom-control-label" for="tag-{{$tag->id}}">{{$tag->name}}</label>
+      </div>
+    @endforeach
+    <h3 class="my-4">IMAGES</h3>
+    @foreach ($images as $image)
+      <div class="custom-control custom-checkbox">
+        <input type="checkbox" class="custom-control-input" id="image-{{$image->id}}" name="images[]" value="{{$image->id}}" {{($post->images->contains($image->id)) ? 'checked' : ''}}>
+        <label class="custom-control-label" for="image-{{$image->id}}">{{$image->alt}} <img src="{{$image->link}}" alt="" style="width: 50px"></label>
       </div>
     @endforeach
 
