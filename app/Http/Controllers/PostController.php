@@ -93,6 +93,8 @@ class PostController extends Controller
     {
         $tags = Tag::all();
         $images = Image::all();
+
+
         return view("posts.edit", compact("post", "tags", "images"));
     }
 
@@ -118,6 +120,12 @@ class PostController extends Controller
            $post->tags()->sync($data['tags']);
         }else{
             $post->tags()->detach();
+        }
+
+        if (!empty($data['images'])) {
+           $post->images()->sync($data['images']);
+        }else{
+            $post->images()->detach();
         }
 
 

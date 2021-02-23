@@ -4,8 +4,66 @@
 // Fonts
 @import url('https://fonts.googleapis.com/css?family=Nunito');
 
+//Slider
+@import "~slick-carousel/slick/slick";
+@import "~slick-carousel/slick/slick-theme";
+
 // Variables
 @import 'variables';
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
+
+
+
+// .main {
+//   font-family:Arial;
+//   width:500px;
+//   display:block;
+//   margin:0 auto;
+// }
+// h3 {
+//     background: aquamarine;
+//     color: #3498db;
+//     font-size: 36px;
+//     line-height: 100px;
+//     margin: 10px;
+//     padding: 2%;
+//     position: relative;
+//     text-align: center;
+//   img {
+//     width: 100%;
+//   }
+// }
+// .action{
+//   display:block;
+//   margin:100px auto;
+//   width:100%;
+//   text-align:center;
+// }
+// .action a {
+//   display:inline-block;
+//   padding:5px 10px; 
+//   background:#f30;
+//   color:#fff;
+//   text-decoration:none;
+// }
+// .action a:hover{
+//   background:#000;
+// }
+
+/* Defines the width of the carousel and centers it on the page */
+.slick-carousel {
+  margin: 0 auto;
+  width: 1000px;
+}
+
+/* The width of each slide */
+.slick-slide {
+  width: 350px;
+}
+
+/* Color of the arrows */
+.slick-next::before, .slick-prev::before {
+  color: black;
+}
